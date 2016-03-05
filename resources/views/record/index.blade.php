@@ -14,8 +14,6 @@
         @foreach($Record::getTodayRecords() as $r)
         @if (0 < $r->modified_at)
         <tr class="info">
-        @else
-        <tr class="danger">
         @endif
             <td>{{$r->created_at}}</td>
             <td>{{$r->getName()}}</td>
@@ -23,7 +21,7 @@
             @if (0 < $r->modified_at)
             <td>已登記</td>
             @else
-            <td id="modify-{{$r->id}}"><button class="btn btn-mini" data-function="modify" data-id="{{$r->id}}">未登記</button></td>
+            <td id="modify-{{$r->id}}"><button class="btn btn-danger btn-mini" data-function="modify" data-id="{{$r->id}}">未登記</button></td>
             @endif
         </tr>
         @endforeach

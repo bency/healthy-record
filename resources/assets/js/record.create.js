@@ -6,7 +6,19 @@ $.ajaxSetup({
 
 var showResult = function (ret) {
     var text = "你今天" + ret.type_name + "已經" + ret.sum + ret.unit + "了";
-    swal(text);
+    var data = {
+        title: "新增成功",
+        text: text,
+        type: "success",
+        showCancelButton: true,
+        cancelButtonClass: "btn-warning",
+        cancelButtonText: "繼續新增",
+        confirmButtonClass: "btn-primary",
+        confirmButtonText: "查看今日列表",
+    };
+    swal(data, function () {
+        location.href = "/record";
+    });
 }
 
 var validate = function (type) {

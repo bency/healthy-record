@@ -32,10 +32,27 @@ class Absort extends Model
         'pupu'  => '大號',
     ];
 
+    public static $id_to_type = [
+        1 => 'water',
+        2  => 'food',
+        101 => 'piss',
+        102 => 'pupu',
+    ];
+
     public static $unit = [
         'water' => '公克',
         'food'  => '公克',
         'piss'  => '公克',
         'pupu'  => '次',
     ];
+
+    public function getName() {
+        $type = self::$id_to_type[$this->attribute_id];
+        return self::$record_text[$type];
+    }
+
+    public function getUnit() {
+        $type = self::$id_to_type[$this->attribute_id];
+        return self::$unit[$type];
+    }
 }

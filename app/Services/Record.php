@@ -48,6 +48,13 @@ class Record
         return ['type_name' => Absort::$record_text[$type], 'sum' => intval($sum), 'unit' => Absort::$unit[$type]];
     }
 
+    public static function getTodayRecords()
+    {
+        return Absort::where('created_at', '>', strtotime('today'))
+            ->where('created_at', '<=', strtotime('tomorrow'))
+            ->get();
+    }
+
     private static function add(array $data)
     {
         return Absort::create($data);

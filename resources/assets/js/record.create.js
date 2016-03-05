@@ -36,6 +36,8 @@ var updateProfile = function () {
         data.value = parseInt($('#before-eat').val()) - parseInt($('#after-eat').val());
         $('#before-eat').val('');
         $('#after-eat').val('');
+    } else if ('pupu' == type) {
+        data.value = parseInt($('#' + type).val());
     } else {
         data.value = parseInt($('#' + type).val());
         $('#' + type).val('');

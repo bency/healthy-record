@@ -42,4 +42,4 @@ var updateProfile = function () {
     }
     $.post('/record', data).done(showResult);
 }
-$(document).on('click', "button", updateProfile);
+$(document).on('click', "button[data-function='submit']", updateProfile);

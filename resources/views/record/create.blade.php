@@ -33,6 +33,7 @@
 <form class="form-horizontal" method="post" action="/record">
     <div class="form-group">
         <div class="col-xs-12">
+            <input id="pupu" type="hidden" value="1">
             <button type="button" class="btn btn-default btn-block" data-type="pupu">記錄大便次數</button>
         </div>
     </div>

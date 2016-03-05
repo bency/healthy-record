@@ -24,6 +24,18 @@ var updateProfile = function () {
     } else {
         data.value = parseInt($('#' + type).val());
     }
+    if (isNaN(data.value) || 1 > data.value) {
+        var wrongWarning = {
+             title: "忘記填數量啦！",
+             type: "warning",
+             confirmButtonClass: "btn-danger",
+             confirmButtonText: "好的",
+             closeOnConfirm: true
+        };
+        return swal(wrongWarning,function (){
+            $('#' + data.type).focus();
+        });
+    }
     if (!validate(data.type)) {
         return false;
     }

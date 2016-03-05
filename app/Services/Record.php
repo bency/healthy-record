@@ -13,6 +13,20 @@ class Record
         'pupu'  => 102,
     ];
 
+    public static $record_text = [
+        'water' => '喝水',
+        'food'  => '吃東西',
+        'piss'  => '小號',
+        'pupu'  => '大號',
+    ];
+
+    public static $unit = [
+        'water' => '公克',
+        'food'  => '公克',
+        'piss'  => '公克',
+        'pupu'  => '次',
+    ];
+
     public static $accept_types = [
         'water',
         'food',
@@ -40,6 +54,19 @@ class Record
             'absort' => $absort,
             'attribute_id' => $attribute_id,
         ]);
+    }
+
+    public static function getTodayRecordsByType($type)
+    {
+        if (!in_array($type, self::$accept_types)) {
+            throw new Exception('無此類型的紀錄');
+        }
+        $attribute_id = self::$record_map[$type];
+        $sum = Absort::where('attribute_id', $attribute_id)
+            ->where('created_at', '>', strtotime('today'))
+            ->where('created_at', '<=', strtotime('tomorrow'))
+            ->sum('value');
+        return ['type_name' => self::$record_text[$type], 'sum' => intval($sum), 'unit' => self::$unit[$type]];
     }
 
     private static function add(array $data)

@@ -25,6 +25,10 @@
             @endif
         </tr>
         @endforeach
+        <tr>
+            <td>總結</td>
+            <td colspan="3">今天到目前為止增加了 {{$Record::getSummaryByDay()}} 公克</td>
+        </tr>
     </tbody>
 </table>
 <a class="btn btn-primary btn-block" href="{{url('record/create')}}">新增</a>

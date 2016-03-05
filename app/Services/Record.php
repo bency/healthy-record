@@ -48,6 +48,21 @@ class Record
         return ['type_name' => Absort::$record_text[$type], 'sum' => intval($sum), 'unit' => Absort::$unit[$type]];
     }
 
+    public static function getSummaryByDay($day = 'today')
+    {
+        $start_at = strtotime($day . " midnight");
+        $end_at = $start_at + 86400;
+        $positive_sum = Absort::where('attribute_id', '<', 100)
+            ->where('created_at', '>', $start_at)
+            ->where('created_at', '<', $end_at)
+            ->sum('value');
+        $negetive_sum = Absort::where('attribute_id', 101)
+            ->where('created_at', '>', $start_at)
+            ->where('created_at', '<', $end_at)
+            ->sum('value');
+        return $positive_sum - $negetive_sum;
+    }
+
     public static function getTodayRecords()
     {
         return Absort::where('created_at', '>', strtotime('today'))

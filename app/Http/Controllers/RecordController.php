@@ -25,7 +25,7 @@ class RecordController extends Controller
      */
     public function create()
     {
-        //
+        return view('record.create');
     }
 
     /**

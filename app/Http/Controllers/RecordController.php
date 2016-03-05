@@ -19,7 +19,7 @@ class RecordController extends Controller
      */
     public function index()
     {
-        return view('record.index');
+        return view('record.index', ['active' => ['index' => 'active', 'create' => null]]);
     }
 
     /**
@@ -29,7 +29,7 @@ class RecordController extends Controller
      */
     public function create()
     {
-        return view('record.create');
+        return view('record.create', ['active' => ['index' => null, 'create' => 'active']]);
     }
 
     /**

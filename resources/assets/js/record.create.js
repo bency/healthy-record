@@ -57,4 +57,12 @@ var updateProfile = function () {
     }
     $.post('/record', data).done(showResult);
 }
+
+var updateRecord = function () {
+    var id = $(this).data('id');
+    $('#modify-' + id).html('已登記');
+    $('#modify-' + id).parent().attr('class', 'info');
+    console.log(id);
+}
 $(document).on('click', "button[data-function='submit']", updateProfile);
+$(document).on('click', "button[data-function='modify']", updateRecord);

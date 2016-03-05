@@ -23,11 +23,14 @@
             @if (0 < $r->modified_at)
             <td>已登記</td>
             @else
-            <td>未登記</td>
+            <td id="modify-{{$r->id}}"><button class="btn btn-mini" data-function="modify" data-id="{{$r->id}}">未登記</button></td>
             @endif
         </tr>
         @endforeach
     </tbody>
 </table>
 <a class="btn btn-primary btn-block" href="{{url('record/create')}}">新增</a>
+@endsection
+@section('bottom-script')
+<script src="/js/record.min.js"></script>
 @endsection

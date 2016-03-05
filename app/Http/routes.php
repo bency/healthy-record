@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/record', "RecordController");
+Route::post('/record/modify', "RecordController@modify");
 
 /*
 |--------------------------------------------------------------------------

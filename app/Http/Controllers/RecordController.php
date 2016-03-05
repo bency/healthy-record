@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Services\Record;
 
+use App\Absort;
+
 class RecordController extends Controller
 {
     /**
@@ -47,6 +49,18 @@ class RecordController extends Controller
         }
         $data = Record::getTodayRecordsByType($type);
         return response()->json(['error' => false, 'type_name' => $data['type_name'], 'sum' => $data['sum'], 'unit' => $data['unit']]);
+    }
+
+    public function modify(Request $request)
+    {
+        $id = $request->get('id');
+        try {
+            $ab = Absort::findOrFail($id);
+            $ab->update(['modified_at' => time()]);
+        } catch (Exception $e) {
+            return response()->json(['error' => true, 'message' => $e->getMessage()]);
+        }
+        return response()->json(['error' => false]);
     }
 
     /**

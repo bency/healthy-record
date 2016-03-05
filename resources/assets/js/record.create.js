@@ -60,9 +60,19 @@ var updateProfile = function () {
 
 var updateRecord = function () {
     var id = $(this).data('id');
-    $('#modify-' + id).html('已登記');
-    $('#modify-' + id).parent().attr('class', 'info');
-    console.log(id);
+    $.post('/record/modify', {id: id}).done(function(ret) {
+        if (ret.error) {
+            return swal({
+                 title: "錯誤",
+                 text: ret.message,
+                 type: "error",
+                 confirmButtonClass: "btn-danger",
+                 closeOnConfirm: true
+            });
+        }
+        $('#modify-' + id).html('已登記');
+        $('#modify-' + id).parent().attr('class', 'info');
+    });
 }
 $(document).on('click', "button[data-function='submit']", updateProfile);
 $(document).on('click', "button[data-function='modify']", updateRecord);

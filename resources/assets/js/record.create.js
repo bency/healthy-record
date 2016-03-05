@@ -22,8 +22,7 @@ var updateProfile = function () {
     if ("piss" == type || "water" == type) {
         data.value = $('#' + type).val();
     } else if ('food' == type) {
-        data.before = $('#before-eat').val();
-        data.after = $('#after-eat').val();
+        data.value = parseInt($('#before-eat').val()) - parseInt($('#after-eat').val());
     }
     if (!validate(data.type)) {
         return false;

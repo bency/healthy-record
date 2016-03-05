@@ -22,7 +22,7 @@ var updateProfile = function () {
     if ('food' == type) {
         data.value = parseInt($('#before-eat').val()) - parseInt($('#after-eat').val());
     } else {
-        data.value = $('#' + type).val();
+        data.value = parseInt($('#' + type).val());
     }
     if (!validate(data.type)) {
         return false;

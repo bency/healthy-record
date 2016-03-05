@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Services\Record;
+
 class RecordController extends Controller
 {
     /**
@@ -36,7 +38,14 @@ class RecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $type = $request->get('type');
+        $value = $request->get('value');
+        try {
+            $ret = Record::addRecord(['type' => $type, 'value' => $value]);
+        } catch (Exception $e) {
+            return response()->json(['error' => true, 'message' => $e->getMessage()]);
+        }
+        return response()->json(['error' => false]);
     }
 
     /**

@@ -12,11 +12,19 @@
     </thead>
     <tbody>
         @foreach($Record::getTodayRecords() as $r)
-        <tr>
+        @if (0 < $r->modified_at)
+        <tr class="info">
+        @else
+        <tr class="danger">
+        @endif
             <td>{{$r->created_at}}</td>
             <td>{{$r->getName()}}</td>
             <td>{{ intval($r->value)}} {{$r->getUnit()}}</td>
-            <td>{{$r->modified_at}}</td>
+            @if (0 < $r->modified_at)
+            <td>已登記</td>
+            @else
+            <td>未登記</td>
+            @endif
         </tr>
         @endforeach
     </tbody>

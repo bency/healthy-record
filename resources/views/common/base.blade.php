@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{asset('/css/app.css')}}">
         <link rel="stylesheet" href="{{asset('/css/app.css.map')}}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>健康記錄</title>
     </head>
     <body>
         <nav class="navbar navbar-default">

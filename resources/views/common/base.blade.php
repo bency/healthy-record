@@ -18,7 +18,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Brand</a>
+              <a class="navbar-brand" href="#">林文義健康記錄</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

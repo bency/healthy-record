@@ -45,7 +45,8 @@ class RecordController extends Controller
         } catch (Exception $e) {
             return response()->json(['error' => true, 'message' => $e->getMessage()]);
         }
-        return response()->json(['error' => false]);
+        $data = Record::getTodayRecordsByType($type);
+        return response()->json(['error' => false, 'type_name' => $data['type_name'], 'sum' => $data['sum'], 'unit' => $data['unit']]);
     }
 
     /**

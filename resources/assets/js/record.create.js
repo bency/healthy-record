@@ -5,7 +5,8 @@ $.ajaxSetup({
 });
 
 var showResult = function (ret) {
-    console.log(ret);
+    var text = "你今天" + ret.type_name + "已經" + ret.sum + ret.unit + "了";
+    swal(text);
 }
 
 var validate = function (type) {

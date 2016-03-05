@@ -34,8 +34,11 @@ var updateProfile = function () {
     data.type = type;
     if ('food' == type) {
         data.value = parseInt($('#before-eat').val()) - parseInt($('#after-eat').val());
+        $('#before-eat').val('');
+        $('#after-eat').val('');
     } else {
         data.value = parseInt($('#' + type).val());
+        $('#' + type).val('');
     }
     if (isNaN(data.value) || 1 > data.value) {
         var wrongWarning = {

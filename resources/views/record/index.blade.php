@@ -13,10 +13,10 @@
     <tbody>
         @foreach($Record::getTodayRecords() as $r)
         <tr>
-            <th>{{$r->created_at}}</th>
-            <th>{{$r->getName()}}</th>
-            <th>{{ intval($r->value)}} {{$r->getUnit()}}</th>
-            <th>{{$r->modified_at}}</th>
+            <td>{{$r->created_at}}</td>
+            <td>{{$r->getName()}}</td>
+            <td>{{ intval($r->value)}} {{$r->getUnit()}}</td>
+            <td>{{$r->modified_at}}</td>
         </tr>
         @endforeach
     </tbody>

@@ -27,6 +27,6 @@ var updateProfile = function () {
     if (!validate(data.type)) {
         return false;
     }
-    $.post('/record', {type: data}).done(showResult);
+    $.post('/record', data).done(showResult);
 }
 $(document).on('click', "button", updateProfile);

@@ -33,19 +33,6 @@ var updateProfile = function () {
     var data = {};
     data.time = $('#record-time').val();
     data.type = type;
-    var date = new Date(data.time);
-    if (isNaN(date.getTime())) {
-        var wrongWarning = {
-             title: "時間設定錯誤！",
-             type: "warning",
-             confirmButtonClass: "btn-danger",
-             confirmButtonText: "確定",
-             closeOnConfirm: true
-        };
-        return swal(wrongWarning,function (){
-            $('#' + data.type).focus();
-        });
-    }
     if ('food' == type) {
         data.value = parseInt($('#before-eat').val()) - parseInt($('#after-eat').val());
         $('#before-eat').val('');

@@ -2,7 +2,7 @@
 @extends('common.base')
 @section('content')
 <?php $sum = [1 => 0, 2 => 0, 101 => 0, 102 => 0];?>
-<table id="fixed-header" class="table">
+<table id="fixed-header" class="table table-striped">
         <tr>
             <th id="fixed-time">時間</th>
             <th id="fixed-water">喝水</th>

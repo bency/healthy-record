@@ -105,5 +105,21 @@ var setHeaderWidth = function () {
         $('#fixed-' + k).width($('#flow-' + k).width());
     }
 }
+var handleFixHeader = function () {
+    var $fixHeader = $('#fixed-header');
+    var $flowTable = $('#flow-table');
+    var showUpThreshold = $flowTable.offset().top + $fixHeader.height();
+    if ($fixHeader.offset().top > showUpThreshold) {
+        var diff = ($fixHeader.offset().top - showUpThreshold) / $fixHeader.height();
+        $fixHeader.css('opacity', diff);
+    } else {
+        $fixHeader.css('opacity', 0);
+    }
+}
+var init = function () {
+    setHeaderWidth();
+}
 $(document).on('click', "button[data-function='submit']", updateProfile);
 $(document).on('click', "button[data-function='modify']", updateRecord);
+$(document).on('scroll', handleFixHeader);
+$(document).on('ready', init);

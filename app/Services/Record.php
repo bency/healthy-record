@@ -68,6 +68,7 @@ class Record
     {
         return Absort::where('created_at', '>', strtotime('today'))
             ->where('created_at', '<=', strtotime('tomorrow'))
+            ->orderBy('created_at', 'desc')
             ->get();
     }
 

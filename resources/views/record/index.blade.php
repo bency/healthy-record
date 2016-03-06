@@ -13,7 +13,7 @@
             <th>吃飯</th>
             <th>小號</th>
             <th>大號</th>
-            <th>登記</th>
+            <th class="col-sx-1 text-right">登記</th>
         </tr>
     </thead>
     <tbody>
@@ -35,20 +35,21 @@
                 @endif
             @endforeach
             @if (0 < $r->modified_at)
-            <td><i class="glyphicon  glyphicon-ok"></i></td>
+            <td><i class="glyphicon  glyphicon-ok pull-right"></i></td>
             @else
-            <td id="modify-{{$r->id}}"><button class="btn btn-danger btn-mini" data-function="modify" data-id="{{$r->id}}"><i class="glyphicon  glyphicon-remove"></i></button></td>
+            <td id="modify-{{$r->id}}"><button class="btn btn-danger btn-mini pull-right" data-function="modify" data-id="{{$r->id}}"><i class="glyphicon  glyphicon-remove"></i></button></td>
             @endif
         </tr>
         @endforeach
-        <tr>
+        <tr class="info">
             <td>小計</td>
             <td>{{$sum[1]}} <small class="unit">公克</small></td>
             <td>{{$sum[2]}} <small class="unit">公克</small></td>
             <td>{{$sum[101]}} <small class="unit">公克</small></td>
             <td>{{$sum[102]}} <small class="unit">次</small></td>
+            <td></td>
         </tr>
-        <tr>
+        <tr class="success">
             <td>總結</td>
             @if ($Record::getSummaryByDay() > 0)
             <td colspan="5">今天到目前為止增加了 {{$Record::getSummaryByDay()}} 公克</td>

@@ -40,6 +40,10 @@
 </form>
 @endsection
 @section('head')
+<link rel="stylesheet" href="{{asset('/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')}}">
+@endsection
 @section('bottom-script')
+<script src="{{asset('/components/moment/min/moment.min.js')}}"></script>
+<script src="{{asset('/components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js')}}"></script>
 <script src="{{asset('/js/record.min.js')}}"></script>
 @endsection

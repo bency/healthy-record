@@ -79,7 +79,7 @@ var updateRecord = function () {
 }
 if ($.fn.datetimepicker) {
 $('#record-time').datetimepicker({
-    format: "YYYY-MM-DD HH:mm:ss"
+    format: "YYYY-MM-DD HH:mm"
 });
 }
 $(document).on('click', "button[data-function='submit']", updateProfile);

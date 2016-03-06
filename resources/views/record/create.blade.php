@@ -2,6 +2,13 @@
 @section('content')
 <form class="form-horizontal" method="post" action="/record">
     <div class="form-group">
+        <label class="col-xs-2 control-label" for="">時間</label>
+        <div class="col-xs-8">
+            <input id="record-time" type="datetime" class="form-control" name="record-time" value="{{date('Y-m-d H:i:s')}}">
+        </div>
+        <button type="button" class="btn btn-default col-xs-2" data-function="submit" data-type="piss">送出</button>
+    </div>
+    <div class="form-group">
         <label class="col-xs-2 control-label" for="">小便</label>
         <div class="col-xs-8">
             <input id="piss" type="number" class="form-control" name="piss" pattern="\d*" placeholder="小便容量">

@@ -78,7 +78,7 @@ var updateRecord = function () {
     });
 }
 $('#record-time').datetimepicker({
-    format: "YYYY-MM-DD hh:mm:ss"
+    format: "YYYY-MM-DD HH:mm:ss"
 });
 $(document).on('click', "button[data-function='submit']", updateProfile);
 $(document).on('click', "button[data-function='modify']", updateRecord);

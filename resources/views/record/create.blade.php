@@ -40,5 +40,5 @@
 </form>
 @endsection
 @section('bottom-script')
-<script src="/js/record.min.js"></script>
+<script src="{{asset('/js/record.min.js')}}"></script>
 @endsection

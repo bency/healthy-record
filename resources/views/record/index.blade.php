@@ -35,9 +35,9 @@
                 @endif
             @endforeach
             @if (0 < $r->modified_at)
-            <td>已登記</td>
+            <td><i class="glyphicon  glyphicon-ok"></i></td>
             @else
-            <td id="modify-{{$r->id}}"><button class="btn btn-danger btn-mini" data-function="modify" data-id="{{$r->id}}">未登記</button></td>
+            <td id="modify-{{$r->id}}"><button class="btn btn-danger btn-mini" data-function="modify" data-id="{{$r->id}}"><i class="glyphicon  glyphicon-remove"></i></button></td>
             @endif
         </tr>
         @endforeach

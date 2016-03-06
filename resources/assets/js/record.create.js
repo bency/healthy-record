@@ -86,7 +86,7 @@ var updateRecord = function () {
                  closeOnConfirm: true
             });
         }
-        $('#modify-' + id).html('已登記');
+        $('#modify-' + id).html('<i class="glyphicon  glyphicon-ok"></i>');
         $('#modify-' + id).parent().attr('class', 'info');
     });
 }

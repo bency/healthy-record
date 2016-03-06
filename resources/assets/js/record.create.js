@@ -77,8 +77,10 @@ var updateRecord = function () {
         $('#modify-' + id).parent().attr('class', 'info');
     });
 }
+if ($.fn.datetimepicker) {
 $('#record-time').datetimepicker({
     format: "YYYY-MM-DD HH:mm:ss"
 });
+}
 $(document).on('click', "button[data-function='submit']", updateProfile);
 $(document).on('click', "button[data-function='modify']", updateRecord);

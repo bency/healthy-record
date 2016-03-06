@@ -96,5 +96,14 @@ if ($.fn.datetimepicker) {
         format: "YYYY-MM-DD HH:mm"
     });
 }
+var setHeaderWidth = function () {
+    $('#fixed-header').width($('#flow-table').width());
+    var cols = ['time', 'water', 'food', 'piss', 'pupu'];
+    var length = cols.length;
+    for (var i = 0; i < length; i++) {
+        var k = cols[i];
+        $('#fixed-' + k).width($('#flow-' + k).width());
+    }
+}
 $(document).on('click', "button[data-function='submit']", updateProfile);
 $(document).on('click', "button[data-function='modify']", updateRecord);

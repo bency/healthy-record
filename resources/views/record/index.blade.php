@@ -12,18 +12,18 @@
             <th id="fixed-modify" class="col-sx-1 text-right">登記</th>
         </tr>
 </table>
-<table class="table">
+<table id="flow-table" class="table">
     <thead>
         <tr>
             <th colspan="4">{{date('Y-m-d')}}</th>
         </tr>
         <tr>
-            <th>時間</th>
-            <th>喝水</th>
-            <th>吃飯</th>
-            <th>小號</th>
-            <th>大號</th>
-            <th class="col-sx-1 text-right">登記</th>
+            <th id="flow-time">時間</th>
+            <th id="flow-water">喝水</th>
+            <th id="flow-food">吃飯</th>
+            <th id="flow-piss">小號</th>
+            <th id="flow-pupu">大號</th>
+            <th id="flow-modify" class="col-sx-1 text-right">登記</th>
         </tr>
     </thead>
     <tbody>

@@ -9,6 +9,7 @@ class Absort extends Model
 {
     use SoftDeletes;
     protected $fillable = [
+        'created_at',
         'attribute_id',
         'value',
         'absort',

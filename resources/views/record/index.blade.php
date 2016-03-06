@@ -29,7 +29,7 @@
             <td>{{$r->getShortTime()}}</td>
             @foreach ([1, 2, 101, 102] as $niddle)
                 @if ($niddle == $r->attribute_id)
-            <td>{{ intval($r->value)}} {{$r->getUnit()}}</td>
+            <td>{{ intval($r->value)}} <small class="unit">{{$r->getUnit()}}</small></td>
                 @else
             <td></td>
                 @endif
@@ -43,10 +43,10 @@
         @endforeach
         <tr>
             <td>小計</td>
-            <td>{{$sum[1]}} 公克</td>
-            <td>{{$sum[2]}} 公克</td>
-            <td>{{$sum[101]}} 公克</td>
-            <td>{{$sum[102]}} 次</td>
+            <td>{{$sum[1]}} <small class="unit">公克</small></td>
+            <td>{{$sum[2]}} <small class="unit">公克</small></td>
+            <td>{{$sum[101]}} <small class="unit">公克</small></td>
+            <td>{{$sum[102]}} <small class="unit">次</small></td>
         </tr>
         <tr>
             <td>總結</td>

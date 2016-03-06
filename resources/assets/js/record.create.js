@@ -78,10 +78,10 @@ var updateRecord = function () {
     });
 }
 if ($.fn.datetimepicker) {
-$('#record-time').datetimepicker({
-    toolbarPlacement: "top",
-    format: "YYYY-MM-DD HH:mm"
-});
+    $('#record-time').datetimepicker({
+        toolbarPlacement: "top",
+        format: "YYYY-MM-DD HH:mm"
+    });
 }
 $(document).on('click', "button[data-function='submit']", updateProfile);
 $(document).on('click', "button[data-function='modify']", updateRecord);

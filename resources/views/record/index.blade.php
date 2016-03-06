@@ -29,7 +29,9 @@
     <tbody>
         @foreach($Record::getTodayRecords() as $r)
         <?php
-            $sum[$r->attribute_id] += $r->value;
+            if (0 == $r->modified_at) {
+                $sum[$r->attribute_id] += $r->value;
+            }
          ?>
         @if (0 < $r->modified_at)
         <tr class="info">
@@ -52,7 +54,7 @@
         </tr>
         @endforeach
         <tr class="info">
-            <td>小計</td>
+            <td>未登小計</td>
             <td>{{$sum[1]}} <small class="unit">公克</small></td>
             <td>{{$sum[2]}} <small class="unit">公克</small></td>
             <td>{{$sum[101]}} <small class="unit">公克</small></td>

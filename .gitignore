@@ -2,6 +2,7 @@
 /node_modules
 /public/storage
 /public/components
+/public/fonts
 Homestead.yaml
 Homestead.json
 .env

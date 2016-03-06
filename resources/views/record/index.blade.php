@@ -2,6 +2,7 @@
 @extends('common.base')
 @section('content')
 <?php $sum = [1 => 0, 2 => 0, 101 => 0, 102 => 0];?>
+<?php $unmod_sum = [1 => 0, 2 => 0, 101 => 0, 102 => 0];?>
 <table id="fixed-header" class="table table-striped">
         <tr>
             <th id="fixed-time">時間</th>
@@ -30,6 +31,8 @@
         @foreach($Record::getTodayRecords() as $r)
         <?php
             if (0 == $r->modified_at) {
+                $unmod_sum[$r->attribute_id] += $r->value;
+            } else {
                 $sum[$r->attribute_id] += $r->value;
             }
          ?>
@@ -54,11 +57,19 @@
         </tr>
         @endforeach
         <tr class="info">
-            <td>未登小計</td>
+            <td>已登小計</td>
             <td>{{$sum[1]}} <small class="unit">公克</small></td>
             <td>{{$sum[2]}} <small class="unit">公克</small></td>
             <td>{{$sum[101]}} <small class="unit">公克</small></td>
             <td>{{$sum[102]}} <small class="unit">次</small></td>
+            <td></td>
+        </tr>
+        <tr class="warning">
+            <td>未登小計</td>
+            <td>{{$unmod_sum[1]}} <small class="unit">公克</small></td>
+            <td>{{$unmod_sum[2]}} <small class="unit">公克</small></td>
+            <td>{{$unmod_sum[101]}} <small class="unit">公克</small></td>
+            <td>{{$unmod_sum[102]}} <small class="unit">次</small></td>
             <td></td>
         </tr>
         <tr class="success">

@@ -15,7 +15,7 @@
         @if (0 < $r->modified_at)
         <tr class="info">
         @endif
-            <td>{{$r->created_at}}</td>
+            <td>{{$r->getShortTime()}}</td>
             <td>{{$r->getName()}}</td>
             <td>{{ intval($r->value)}} {{$r->getUnit()}}</td>
             @if (0 < $r->modified_at)

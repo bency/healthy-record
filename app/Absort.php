@@ -47,6 +47,11 @@ class Absort extends Model
         'pupu'  => '次',
     ];
 
+    public function getShortTime()
+    {
+        return explode(' ', $this->created_at)[1];
+    }
+
     public function getName() {
         $type = self::$id_to_type[$this->attribute_id];
         return self::$record_text[$type];

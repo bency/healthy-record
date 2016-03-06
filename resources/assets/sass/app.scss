@@ -7,3 +7,8 @@ small.unit {
     color: gray;
     font-size: 10px;
 }
+
+#fixed-header {
+    top: 0;
+    position: fixed;
+}

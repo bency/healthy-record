@@ -4,7 +4,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th>日期</th>
+            <th colspan="4">{{date('Y-m-d')}}</th>
+        </tr>
+        <tr>
+            <th>時間</th>
             <th>項目</th>
             <th>數量</th>
             <th>登記</th>

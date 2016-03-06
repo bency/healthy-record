@@ -64,6 +64,13 @@ class Record
         return $positive_sum - $negetive_sum;
     }
 
+    public static function get24HoursRecords()
+    {
+        return Absort::where('created_at', '>', strtotime('-1 day'))
+            ->orderBy('created_at', 'asc')
+            ->get();
+    }
+
     public static function getTodayRecords()
     {
         return Absort::where('created_at', '>', strtotime('today'))

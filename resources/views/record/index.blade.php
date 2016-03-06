@@ -28,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($Record::getTodayRecords() as $r)
+        @foreach($Record::get24HoursRecords() as $r)
         <?php
             if (0 == $r->modified_at) {
                 $unmod_sum[$r->attribute_id] += $r->value;

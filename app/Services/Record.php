@@ -31,6 +31,7 @@ class Record
         return self::add([
             'value' => $value,
             'absort' => $absort,
+            'created_at' => $data['created_at'],
             'attribute_id' => $attribute_id,
         ]);
     }

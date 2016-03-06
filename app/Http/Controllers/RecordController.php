@@ -42,8 +42,9 @@ class RecordController extends Controller
     {
         $type = $request->get('type');
         $value = $request->get('value');
+        $created_at = strtotime($request->get('time'));
         try {
-            $ret = Record::addRecord(['type' => $type, 'value' => $value]);
+            $ret = Record::addRecord(['type' => $type, 'value' => $value, 'created_at' => $created_at]);
         } catch (Exception $e) {
             return response()->json(['error' => true, 'message' => $e->getMessage()]);
         }

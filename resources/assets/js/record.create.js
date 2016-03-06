@@ -31,6 +31,7 @@ var validate = function (type) {
 var updateProfile = function () {
     var type = $(this).data('type');
     var data = {};
+    data.time = $('#record-time').val();
     data.type = type;
     if ('food' == type) {
         data.value = parseInt($('#before-eat').val()) - parseInt($('#after-eat').val());

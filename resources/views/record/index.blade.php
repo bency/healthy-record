@@ -50,7 +50,11 @@
         </tr>
         <tr>
             <td>總結</td>
+            @if ($Record::getSummaryByDay() > 0)
             <td colspan="5">今天到目前為止增加了 {{$Record::getSummaryByDay()}} 公克</td>
+            @else
+            <td colspan="5">今天到目前為止減少了 {{ -$Record::getSummaryByDay()}} 公克</td>
+            @endif
         </tr>
     </tbody>
 </table>

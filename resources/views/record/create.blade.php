@@ -3,10 +3,9 @@
 <form class="form-horizontal" method="post" action="/record">
     <div class="form-group">
         <label class="col-xs-2 control-label" for="">時間</label>
-        <div class="col-xs-8">
+        <div class="col-xs-10">
             <input id="record-time" type="datetime" class="form-control" name="record-time" value="{{date('Y-m-d H:i:s')}}">
         </div>
-        <button type="button" class="btn btn-default col-xs-2" data-function="submit" data-type="piss">送出</button>
     </div>
     <div class="form-group">
         <label class="col-xs-2 control-label" for="">小便</label>

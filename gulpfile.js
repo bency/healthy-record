@@ -14,8 +14,5 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.sass('app.scss')
     .scripts('record.create.js', 'public/js/record.min.js')
-    .copy('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'public/js/bootstrap.min.js')
-    .copy('node_modules/bootstrap-sweetalert/lib/sweet-alert.min.js', 'public/js/sweet-alert.min.js')
-    .copy('node_modules/bootstrap-sweetalert/lib/sweet-alert.css', 'public/css/sweet-alert.css')
-    .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js');
+    .copy('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'public/js/bootstrap.min.js');
 });

@@ -79,6 +79,7 @@ var updateRecord = function () {
 }
 if ($.fn.datetimepicker) {
 $('#record-time').datetimepicker({
+    toolbarPlacement: "top",
     format: "YYYY-MM-DD HH:mm"
 });
 }

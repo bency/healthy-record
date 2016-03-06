@@ -2,6 +2,16 @@
 @extends('common.base')
 @section('content')
 <?php $sum = [1 => 0, 2 => 0, 101 => 0, 102 => 0];?>
+<table id="fixed-header" class="table">
+        <tr>
+            <th id="fixed-time">時間</th>
+            <th id="fixed-water">喝水</th>
+            <th id="fixed-food">吃飯</th>
+            <th id="fixed-piss">小號</th>
+            <th id="fixed-pupu">大號</th>
+            <th id="fixed-modify" class="col-sx-1 text-right">登記</th>
+        </tr>
+</table>
 <table class="table">
     <thead>
         <tr>
